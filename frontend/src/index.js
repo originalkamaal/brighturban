@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import "./tailwind.generated.css";
+import "./bundle.css";
 import { Provider } from 'react-redux';
 import { configStore } from './redux/store';
 import { ErrorBoundary } from 'react-error-boundary';

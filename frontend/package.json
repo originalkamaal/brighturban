@@ -1,42 +1,40 @@
 {
-  "name": "brighturban",
+  "name": "frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@fullhuman/postcss-purgecss": "^2.2.0",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "firebase": "^8.3.1",
+    "firebase": "^9.8.4",
     "flowbite": "^1.4.7",
     "flowbite-react": "^0.1.0",
-    "npm-run-all": "^4.1.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-error-boundary": "^3.1.4",
-    "react-firebase-hooks": "^3.0.4",
     "react-helmet-async": "^1.3.0",
     "react-redux": "^8.0.2",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "redux": "^4.2.0",
     "redux-immutable-state-invariant": "^2.1.0",
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
     "redux-saga": "^1.1.3",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "build:tailwind": "postcss src/tailwind.css -o src/tailwind.generated.css",
-    "watch:tailwind": "postcss -w src/tailwind.css -o src/tailwind.generated.css",
-    "start": "run-p watch:tailwind start:react",
-    "start:react": "react-scripts start",
-    "prebuild": "npm run build:tailwind",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:tailwind": "postcss src/tailwind.css -o src/bundle.css",
+    "watch:tailwind": "postcss -w src/tailwind.css -o src/bundle.css",
+    "start": "run-p watch:tailwind start:react",
+    "start:react": "react-scripts start",
+    "prebuild": "npm run build:tailwind"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
@@ -49,5 +47,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^10.0.0",
+    "tailwindcss": "^3.1.4"
   }
 }
