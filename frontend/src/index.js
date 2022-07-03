@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./bundle.css";
 import { Provider } from 'react-redux';
@@ -7,7 +7,7 @@ import { configStore } from './redux/store';
 import { ErrorBoundary } from 'react-error-boundary';
 import { HelmetProvider } from 'react-helmet-async';
 import { PersistGate } from 'redux-persist/lib/integration/react';
-import {BrowserRouter} from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 const { persistor, store } = configStore();
 
@@ -21,7 +21,8 @@ function ErrorFallback({ error, resetErrorBoundary }) {
   )
 }
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
   <Provider store={store}>
     <PersistGate persistor={persistor}>
       <ErrorBoundary FallbackComponent={ErrorFallback}>
@@ -34,6 +35,6 @@ ReactDOM.render(
         </HelmetProvider>
       </ErrorBoundary>
     </PersistGate>
-  </Provider>,
-  document.getElementById('root')
+  </Provider>
 );
+
