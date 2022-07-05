@@ -1,1 +1,0 @@
-# BrightUrban REST API Server
