@@ -8,6 +8,10 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { HelmetProvider } from 'react-helmet-async';
 import { PersistGate } from 'redux-persist/lib/integration/react';
 import { BrowserRouter } from 'react-router-dom';
+import client from './apolloClient';
+import { ApolloProvider } from "@apollo/react-hooks";
+import { AuthProvider } from "./contexts/authContext";
+
 
 const { persistor, store } = configStore();
 
@@ -23,18 +27,22 @@ function ErrorFallback({ error, resetErrorBoundary }) {
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Provider store={store}>
-    <PersistGate persistor={persistor}>
-      <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <HelmetProvider>
-          <React.StrictMode>
-            <BrowserRouter>
-              <App />
-            </BrowserRouter>
-          </React.StrictMode>
-        </HelmetProvider>
-      </ErrorBoundary>
-    </PersistGate>
-  </Provider>
+  <AuthProvider>
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <ErrorBoundary FallbackComponent={ErrorFallback}>
+          <HelmetProvider>
+            <React.StrictMode>
+              <ApolloProvider client={client}>
+                <BrowserRouter>
+                  <App />
+                </BrowserRouter>
+              </ApolloProvider>
+            </React.StrictMode>
+          </HelmetProvider>
+        </ErrorBoundary>
+      </PersistGate>
+    </Provider>
+  </AuthProvider>
 );
 

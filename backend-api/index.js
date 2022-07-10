@@ -1,15 +1,19 @@
+require('dotenv').config();
 const { ApolloServer }  = require('apollo-server');
 const mongoose = require('mongoose');
+
 
 const typeDefs = require('./graphql/typeDefs');
 const resolvers = require('./graphql/resolvers');
 
-const MONGODB = "mongodb+srv://admin:coopercodes@apolloserversetup.n9ghj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const MONGODB = "mongodb+srv://originalkamaal:cricket99300@brighturban-mongodb.hh2pr.mongodb.net/?retryWrites=true&w=majority";
 
 const server = new ApolloServer({
     typeDefs,
     resolvers
 });
+
+
 
 mongoose.connect(MONGODB, {useNewUrlParser: true})
     .then(() => {

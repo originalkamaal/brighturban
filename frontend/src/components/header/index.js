@@ -13,7 +13,7 @@ function Header(props) {
             <div className='bg-blue-600 text-white h-16 flex flex-row items-center justify-between px-6'>
                 <Logo />
                 <Search />
-                <Menu currentUser/>
+                <Menu/>
             </div>
             <MegaMenu />
         </>
