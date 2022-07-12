@@ -1,28 +1,65 @@
 {
-  "name": "mosaic-light-react",
+  "name": "frontend",
   "version": "0.1.0",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
+  "private": true,
   "dependencies": {
-    "@tailwindcss/forms": "^0.4.0",
-    "chart.js": "^3.5.0",
-    "chartjs-adapter-moment": "^1.0.0",
-    "moment": "^2.29.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-flatpickr": "^3.10.7",
-    "react-router-dom": "^6.2.1",
-    "react-transition-group": "^4.4.1"
+    "@apollo/client": "^3.6.9",
+    "@apollo/react-hooks": "^4.0.0",
+    "firebase": "^9.8.4",
+    "flowbite": "^1.4.7",
+    "flowbite-react": "^0.1.0",
+    "graphql-tag": "^2.12.6",
+    "jwt-decode": "^3.1.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-error-boundary": "^3.1.4",
+    "react-helmet-async": "^1.3.0",
+    "react-icons": "^4.4.0",
+    "react-redux": "^8.0.2",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "redux": "^4.2.0",
+    "redux-immutable-state-invariant": "^2.1.0",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
+    "redux-saga": "^1.1.3",
+    "swiper": "^8.2.6",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "build:tailwind": "postcss src/tailwind.css -o src/bundle.css",
+    "watch:tailwind": "postcss -w src/tailwind.css -o src/bundle.css",
+    "start": "run-p watch:tailwind start:react",
+    "start:react": "react-scripts start",
+    "prebuild": "npm run build:tailwind"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^1.0.7",
-    "autoprefixer": "^10.4.2",
-    "postcss": "^8.4.5",
-    "sass": "^1.49.0",
-    "tailwindcss": "^3.0.15",
-    "vite": "^2.7.2"
+    "autoprefixer": "^10.4.7",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^10.0.0",
+    "tailwindcss": "^3.1.4"
   }
 }
+

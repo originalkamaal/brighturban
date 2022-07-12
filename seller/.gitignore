@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 
+# seller
+
 # testing
 /coverage
 
