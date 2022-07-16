@@ -10,8 +10,7 @@ export default function HomeLayout(props) {
   return (
     <div className='flex flex-col flex-grow w-full'>
       <Navbar />
-
-      <div className='w-full px-3 space-y-3 pt-3 bg-gray-100'>
+      <div className='w-full space-y-3 bg-gray-100'>
 
 
         <Outlet />
