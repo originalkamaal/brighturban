@@ -6,7 +6,6 @@ const AddProductDetails = () => {
   const { userData, setUserData } = useStepperContext();
   useEffect(() => {
 
-    setUserData({ ...userData, brand: 'kamaal' });
   }, [])
   return (
     <div>AddProductDetails</div>

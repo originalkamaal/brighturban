@@ -6,6 +6,7 @@ const SelectBrand = (props) => {
   const { handleClick, setUsedBrands, usedBrands, checkBrandApproval } = props;
 
 
+
   useEffect(() => {
     //fetch and set Usedbrands in given verticals
   }, [])
@@ -30,6 +31,7 @@ const SelectBrand = (props) => {
           </div>
 
           <div className='grid grid-cols-2 md:grid-cols-4 gap-1'>
+            {/* used Brands in given vertical */}
             <p className='text-xs p-1 text-blue-600'>Brand1</p>
             <p className='text-xs p-1 text-blue-600'>Brand1</p>
             <p className='text-xs p-1 text-blue-600'>Brand1</p>
@@ -46,7 +48,14 @@ const SelectBrand = (props) => {
 
           </div>
         </div>
-        <div className='bg-white p-4 text-xs rounded-md'>
+        <div className='bg-white p-4 text-xs rounded-md h-full'>
+
+          <div className='h-full space-y-3 flex flex-col justify-center items-center'>
+            <i className='text-teal-500 text-2xl bx bxs-check-circle'></i>
+            <p className='font-semibold'>Brand1</p>
+            <p>You can start selling under this brand.</p>
+            <button onClick={handleClick} className='bg-blue-600 text-white h-7 flex justify-center items-center rounded-md px-4'>Create New Listing</button>
+          </div>
 
         </div>
 
