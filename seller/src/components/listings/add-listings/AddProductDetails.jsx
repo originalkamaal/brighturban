@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
-import { useStepperContext } from '../../../contexts/stepperContext'
+//import { useStepperContext } from '../../../contexts/stepperContext'
 
 
 const AddProductDetails = () => {
-  const { userData, setUserData } = useStepperContext();
+  //const { userData, setUserData } = useStepperContext();
   useEffect(() => {
 
   }, [])

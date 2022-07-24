@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
-import { useStepperContext } from '../../../contexts/stepperContext'
+//import { useStepperContext } from '../../../contexts/stepperContext'
 
 const SelectBrand = (props) => {
-  const { userData, setUserData } = useStepperContext();
-  const { handleClick, setUsedBrands, usedBrands, checkBrandApproval } = props;
+  // const { userData, setUserData } = useStepperContext();
+  //setUsedBrands, usedBrands, checkBrandApproval
+  const { handleClick } = props;
 
 
 
