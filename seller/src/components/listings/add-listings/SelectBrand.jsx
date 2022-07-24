@@ -11,7 +11,6 @@ const SelectBrand = (props) => {
   useEffect(() => {
     //fetch and set Usedbrands in given verticals
   }, [])
-
   return (
     <div className='w-full'>
 
