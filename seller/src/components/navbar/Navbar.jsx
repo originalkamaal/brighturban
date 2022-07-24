@@ -7,9 +7,6 @@ const Navbar = () => {
     const notice =[];
     //const notice = [{ type: 'warning', msg: 'Your account is not active ', link: '#' }, { type: 'info', msg: 'Your account is not active know more ', link: '#' }]
 
-    const path = useLocation().pathname;
-    console.log(useLocation());
-    const splittedPath = path.split('/');
     const [open, setOpen] = useState(false);
     return (
         <>
@@ -43,17 +40,7 @@ const Navbar = () => {
 
                 return <Notice type={el.type} msg={el.msg} key={i} link={el.link} />
             })}
-            <div className='flex flex-row items-center text-xs px-5 p-2 space-x-2 bg-gray-100'>
-                <div className='text-gray-600 capitalize'><Link to='/'>Home</Link></div>
-                {splittedPath.map((el, i) => {
-
-                    if (i == 0) {
-                        return ''
-                    }
-                    return <div key={i} className='text-gray-600 capitalize flex items-center'><i className='font-bold bx bx-chevron-right pr-2' ></i> <Link to={el}>{el.replace(/[^a-zA-Z ]/g, " ")}</Link></div>
-                })}
-
-            </div>
+            
         </>
 
     )
@@ -78,8 +65,8 @@ const NavLinks = () => {
                     link = link.split('/')[1]
 
                     return (
-                        <>
-                            <div className='relative hidden md:flex items-center px-2 py-2 md:py-0 w-full justify-start md:h-full text-sm text-left md:cursor-pointer group' key={i}>
+                        <div key={i} className='hidden md:flex h-full'>
+                            <div className='relative hidden md:flex items-center px-2 py-2 md:py-0 w-full justify-start md:h-full text-sm text-left md:cursor-pointer group'>
                                 <div className={`flex font-bold items-center h-full justify-center ${(pathname === link ? ' text-blue-600 border-b-2 border-blue-600' : 'text-gray-500 hover:text-blue-600 border-b-2 border-white hover:border-blue-600')}`}>
                                     <NavLink to={links.link} className={`${links.submenu && 'pl-1'} flex items-center h-full`}>{links.title}</NavLink>
                                     {links.submenu && <i className='bx bx-chevron-down'></i>}
@@ -132,7 +119,7 @@ const NavLinks = () => {
 
                             </div>
 
-                        </>
+                        </div>
 
                     )
                 })

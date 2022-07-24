@@ -5,9 +5,7 @@ export const navLinks = [
     {
         link: "/listings", title: "Listings", submenu: [
             { link: "/listings", title: "All Listings" },
-            { link: "/listings/add-single-listing", title: "Add Single Listing" },
-            { link: "/listings/add-bulk-listings", title: "Add Bulk Listings" },
-            { link: "/listings/search", title: "Sell Others Listings" },
+            { link: "/listings/addNewListings", title: "Add New Listings" },
             { link: "/listings/brand-approval", title: "Brand Approval" },
             { link: "/listings/track-brand-approval", title: "Track Approval Request" },
             { link: "/listings/opportunities", title: "Opportunities" }]

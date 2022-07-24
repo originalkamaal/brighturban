@@ -32,13 +32,11 @@ root.render(
       <PersistGate persistor={persistor}>
         <ErrorBoundary FallbackComponent={ErrorFallback}>
           <HelmetProvider>
-            <React.StrictMode>
-              <ApolloProvider client={client}>
-                <BrowserRouter>
-                  <App />
-                </BrowserRouter>
-              </ApolloProvider>
-            </React.StrictMode>
+            <ApolloProvider client={client}>
+              <BrowserRouter>
+                <App />
+              </BrowserRouter>
+            </ApolloProvider>
           </HelmetProvider>
         </ErrorBoundary>
       </PersistGate>

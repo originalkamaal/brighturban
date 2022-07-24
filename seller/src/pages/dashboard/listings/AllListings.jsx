@@ -3,7 +3,10 @@ import FullWidth from '../../../components/containers/FullWidth';
 import BulkActions from '../../../components/listings/BulkActions'
 import ListingFilter from '../../../components/listings/ListingFilter';
 import ListingStats from '../../../components/listings/ListingStats'
-import ProductsList from '../../../components/listings/ProductsList';
+import ActiveProductsList from '../../../components/listings/ActiveProductsList';
+import Breadcum from '../../../components/ui/Breadcum';
+import PageHeading from '../../../components/ui/PageHeading';
+
 
 const AllListings = () => {
 
@@ -17,8 +20,8 @@ const AllListings = () => {
   ];
   return (
     <>
-      <div className='px-5 flex flex-row justify-between items-center'>
-        <div className='text-lg'>Add New Listings</div>
+      <Breadcum links={[{ path: '/listings', text: 'All Listings' }]} />
+      <PageHeading title='All Listings'>
         <div className='hidden md:flex flex-row h-12 items-center space-x-2'>
           <div className='flex flex-row items-center h-10'>
             <input type='text' className='h-full p-3 w-56 focus:outline-none text-gray-500 text-sm shadow-sm rounded-l-sm' placeholder='Search for Title, SKU Id, UID' />
@@ -26,29 +29,13 @@ const AllListings = () => {
           </div>
           <button className='p-2 px-3.5 rounded-sm bg-blue-600 h-10 text-white uppercase text-sm'>Add New Listings</button>
         </div>
-
-
-      </div>
-
-
-
-
+      </PageHeading>
       <ListingStats data={data} />
-
       <FullWidth>
-
         <BulkActions />
         <ListingFilter />
-
-        <ProductsList/>
+        <ActiveProductsList />
       </FullWidth>
-
-
-
-
-
-
-
 
     </>
   )

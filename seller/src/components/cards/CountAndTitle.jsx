@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CountAndTitile = ({ value, title, about }) => {
+const CountAndTitle = ({ value, title, about }) => {
     return (
         <div className='relative bg-white border border-gray-200 px-3 py-1 mr-2 mb-2 pr-5 min-w-card rounded-md whitespace-nowrap shadow-inner flex flex-row justify-between items-center'>
             <div className='relative flex flex-col'>
@@ -21,4 +21,4 @@ const CountAndTitile = ({ value, title, about }) => {
     )
 }
 
-export default CountAndTitile
+export default CountAndTitle

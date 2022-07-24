@@ -11,10 +11,12 @@ const ProductsList = () => {
     });
 
 
+
     const [infoWidth, setInfoWidth] = useState(0);
     const [moreMenu, setMoreMenu] = useState('');
     const [isInfoOpen, setInfoOpen] = useState(false);
     const [whichTab, setWhichTab] = useState(0);
+    const [columns, setColumns] = useState(0);
 
     const tableWidth = useRef(null);
     const col1 = useRef(null);
@@ -24,6 +26,15 @@ const ProductsList = () => {
     useEffect(() => {
         setInfoWidth(tableWidth.current.offsetWidth - col1.current.offsetWidth - col2.current.offsetWidth - col3.current.offsetWidth);
     }, []);
+
+    useEffect(() => {
+        const resultTable = tableWidth.current;
+        setColumns(resultTable.rows[0].cells.length);
+
+
+    }, [])
+
+
 
 
     const openInfo = () => {
@@ -57,7 +68,7 @@ const ProductsList = () => {
                             <input type='checkbox'></input>
                         </td>
                         <td className='border border-gray-200 w-auto text-xs text-center p-4'>
-                            <img src='https://img1a.flixcart.com/image/50/50/l5iid8w0/duffel-bag/w/u/z/15-dufflebag-87654-gym-duffel-bag-8-sri-balaji-international-20-original-imagg6armhsutezt.jpeg' />
+                            <img alt="" src='https://img1a.flixcart.com/image/50/50/l5iid8w0/duffel-bag/w/u/z/15-dufflebag-87654-gym-duffel-bag-8-sri-balaji-international-20-original-imagg6armhsutezt.jpeg' />
                         </td>
                         <td className='border border-gray-200 w-auto text-xs text-center p-1 font-semibold text-blue-600' font-light>
                             <div>Brighturban X1 Pro (4GB, 64GB)</div>
@@ -111,7 +122,7 @@ const ProductsList = () => {
                             <input type='checkbox'></input>
                         </td>
                         <td className='border border-gray-200 w-auto text-xs text-center p-4'>
-                            <img src='https://img1a.flixcart.com/image/50/50/l5iid8w0/duffel-bag/w/u/z/15-dufflebag-87654-gym-duffel-bag-8-sri-balaji-international-20-original-imagg6armhsutezt.jpeg' />
+                            <img alt="" src='https://img1a.flixcart.com/image/50/50/l5iid8w0/duffel-bag/w/u/z/15-dufflebag-87654-gym-duffel-bag-8-sri-balaji-international-20-original-imagg6armhsutezt.jpeg' />
                         </td>
                         <td className='border border-gray-200 w-auto text-xs text-center p-1 font-semibold text-blue-600' font-light>
                             <div>Brighturban X1 Pro (4GB, 64GB)</div>
@@ -163,7 +174,7 @@ const ProductsList = () => {
                             <input type='checkbox'></input>
                         </td>
                         <td className='border border-gray-200 w-auto text-xs text-center p-4'>
-                            <img src='https://img1a.flixcart.com/image/50/50/l5iid8w0/duffel-bag/w/u/z/15-dufflebag-87654-gym-duffel-bag-8-sri-balaji-international-20-original-imagg6armhsutezt.jpeg' />
+                            <img alt="" src='https://img1a.flixcart.com/image/50/50/l5iid8w0/duffel-bag/w/u/z/15-dufflebag-87654-gym-duffel-bag-8-sri-balaji-international-20-original-imagg6armhsutezt.jpeg' />
                         </td>
                         <td className='border border-gray-200 w-auto text-xs text-center p-1 font-semibold text-blue-600' font-light>
                             <div>Brighturban X1 Pro (4GB, 64GB)</div>
@@ -207,6 +218,41 @@ const ProductsList = () => {
                             <i onClick={() => setMoreMenu(1)} className={`z-0 flex text-2xl bx bx-dots-vertical-rounded`}></i>
                             <div ref={ref} className={`${moreMenu === 1 ? 'flex' : 'hidden'} absolute right-2/3 top-2/3 z-50 bg-gray-200 rounded-md h-40 w-40`}>
 
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colSpan={columns}>
+                            <div className='flex flex-row w-full items-center justify-between space-x-4 px-4 text-xs text-gray-500 py-2'>
+                                <div className='flex whitespace-nowrap'>
+                                    Showing 1 to 7 of 7 items
+                                </div>
+
+
+                                <div className='flex items-center space-x-3'>
+                                    <div className='flex py-2 mr-2'>
+                                        <select name="default" className='inline-block h-6 px-2 pr-6 -mr-5 appearance-none outline-none bg-gray-100'>
+                                            <option value="10">10</option>
+                                            <option value="25">25</option>
+                                            <option value="50">50</option>
+                                            <option value="100">100</option>
+
+                                        </select>
+                                        <i className=' bx bxs-down-arrow flex items-center pointer-events-none justify-center h-6'></i>
+                                    </div>
+                                    <div className='pr-5'>
+                                        items per page
+                                    </div>
+                                    <div className='flex whitespace-nowrap'>
+                                        1 of 1 pages
+                                    </div>
+
+                                </div>
+
+                                <div className='flex items-center whitespace-nowrap space-x-3'>
+                                    <div className='rounded-md  text-white w-20 flex items-center justify-center px-2 py-1.5 cursor-pointer bg-blue-600'>Previous</div>
+                                    <div className='rounded-md  text-white w-20 flex items-center justify-center px-2 py-1.5 cursor-pointer bg-blue-600'>Next</div>
+                                </div>
                             </div>
                         </td>
                     </tr>
